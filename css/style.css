@@ -22,7 +22,8 @@ h2 {
   color: blueviolet;
   font-size: 28px;
   font-style: bold;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 h3 {
@@ -34,6 +35,11 @@ h3 {
 ul {
   list-style-type: disc;
   margin-left: 8px;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 10px;
 }
 
 li {
@@ -49,5 +55,4 @@ footer {
   line-height: 70px;
   margin-top: 15px;
   text-align: center;
-  
 }
