@@ -9,8 +9,8 @@ main {
 header {
   background: #111;
   color: red;
-  line-height: 70px;
   height: 70px;
+  line-height: 70px;
   text-align: center;
 }
 
@@ -25,22 +25,29 @@ h2 {
   margin-bottom: 12px;
 }
 
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 ul {
   list-style-type: disc;
   margin-left: 8px;
 }
 
 li {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 footer {
   background: #111;
+  color: red;
+  font-size: 46px;
   height: 70px;
   line-height: 70px;
-  font-size: 46px;
-  color: red;
-  text-align: center;
   margin-top: 15px;
+  text-align: center;
+  
 }
