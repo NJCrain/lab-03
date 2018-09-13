@@ -97,26 +97,34 @@ alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answer
 
 /* Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
 var attempts = 0;
-var statesVisited = ['WASHINGTON', 'WA', 'OREGON', 'OR', 'FLORIDA', 'FL', 'TEXAS', 'TX', 'OKLAHOMA', 'OK', 'CALIFORNIA', 'CA', 'IDAHO', 'ID', 'MONTANA', 'ALABAMA', 'AL', 'LOUISIANA', 'LA'];
+var statesVisited = ['Washington', 'Oregon', 'Florida', 'Texas', 'Oklahoma', 'California', 'Idaho', 'Montana', 'Alabama', 'Lousiana'];
+var statesAbbreviated = ['WA', 'OR', 'FL', 'TX', 'OK', 'CA', 'ID', 'MT', 'AL', 'LA'];
+var answers = '';
 scorePossible++;
+
+for(i = 0; i < statesVisited.length; i++){
+  answers += statesVisited[i] + ', ';
+}
+
 while(attempts < 6) {
   var questionSeven = prompt('Guess a state I have visited before. You have used ' + attempts + ' of 6 guesses');
 
   for(i = 0; i < statesVisited.length; i++) {
-    if(questionSeven.toUpperCase() === statesVisited[i]) {
+    if(questionSeven.toUpperCase() === statesVisited[i].toUpperCase() || questionSeven.toUpperCase() === statesAbbreviated[i]) {
       currentScore++;
-      alert('Correct! I have been to ' + statesVisited[i]);
+      alert('Correct! I have been to ' + answers);
       console.log('Question 7: Correct in ' + (attempts + 1) + ' tries');
       attempts = 7;
       break;
     }
     else if(i === (statesVisited.length-1)) {
-      alert('Nope! I have not been there before. Try again!');
+      alert('Nope! I have not been there before.');
       attempts++;
     }
   }
 }
 if(attempts === 6) {
+  alert('Sorry, I have visited ' + answers);
   console.log('Question 7: Incorrect');
 }
 
