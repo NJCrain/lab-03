@@ -128,4 +128,15 @@ if(attempts === 6) {
   console.log('Question 7: Incorrect');
 }
 
-alert('Well done, ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
+if(currentScore === 7) {
+  alert('Amazing, ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
+}
+else if (currentScore > 5) {
+  alert('Well done ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
+}
+else if (currentScore > 3) {
+  alert('Hmm, ' + username + ' You got ' + currentScore + ' out of ' + scorePossible + ' answers right.');
+}
+else if (currentScore === 0) {
+  alert('Wow' + username + '. You got ' + currentScore + ' out of ' + scorePossible + ' answers right. Maybe you should try talking to me first...');
+}
