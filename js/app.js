@@ -2,7 +2,7 @@
 
 var currentScore = 0;
 var scorePossible = 0;
-//var username = prompt('Hello there! What is your name?');
+var username = prompt('Hello there! What is your name?');
 
 function question1() {
   var questionOne = prompt('Am I over 6\'2"?');
@@ -111,56 +111,67 @@ function question6(){
   alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
 }
 
-/* Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
-/*var attempts = 0;
-var statesVisited = ['Washington', 'Oregon', 'Florida', 'Texas', 'Oklahoma', 'California', 'Idaho', 'Montana', 'Alabama', 'Lousiana'];
-var statesAbbreviated = ['WA', 'OR', 'FL', 'TX', 'OK', 'CA', 'ID', 'MT', 'AL', 'LA'];
-var answers = '';
-scorePossible++;
+//*Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
+function question7() {
+  var attempts = 0;
+  var statesVisited = ['Washington', 'Oregon', 'Florida', 'Texas', 'Oklahoma', 'California', 'Idaho', 'Montana', 'Alabama', 'Lousiana'];
+  var statesAbbreviated = ['WA', 'OR', 'FL', 'TX', 'OK', 'CA', 'ID', 'MT', 'AL', 'LA'];
+  var answers = '';
+  scorePossible++;
 
-for(i = 0; i < statesVisited.length; i++){
-  answers += statesVisited[i] + ', ';
-}
+  for(var i = 0; i < statesVisited.length; i++){
+    answers += statesVisited[i] + ', ';
+  }
 
-while(attempts < 6) {
-  var questionSeven = prompt('Guess a state I have visited before. You have used ' + attempts + ' of 6 guesses');
+  var isCorrect = false;
 
-  for(i = 0; i < statesVisited.length; i++) {
-    if(questionSeven.toUpperCase() === statesVisited[i].toUpperCase() || questionSeven.toUpperCase() === statesAbbreviated[i]) {
-      currentScore++;
-      alert('Correct! I have been to ' + answers);
-      console.log('Question 7: Correct in ' + (attempts + 1) + ' tries');
-      attempts = 7;
+  while(attempts < 6) {
+    var questionSeven = prompt('Guess a state I have visited before. You have used ' + attempts + ' of 6 guesses');
+
+    for(i = 0; i < statesVisited.length; i++) {
+      if(questionSeven.toUpperCase() === statesVisited[i].toUpperCase() || questionSeven.toUpperCase() === statesAbbreviated[i]) {
+        currentScore++;
+        alert('Correct! I have been to ' + answers);
+        console.log('Question 7: Correct in ' + (attempts + 1) + ' tries');
+        isCorrect = true;
+        break;
+      }
+      else if(i === (statesVisited.length-1)) {
+        alert('Nope! I have not been there before.');
+        attempts++;
+      }
+    }
+
+    if (isCorrect === true){
       break;
     }
-    else if(i === (statesVisited.length-1)) {
-      alert('Nope! I have not been there before.');
-      attempts++;
-    }
+  }
+  if(attempts === 6) {
+    alert('Sorry, I have visited ' + answers);
+    console.log('Question 7: Incorrect');
   }
 }
-if(attempts === 6) {
-  alert('Sorry, I have visited ' + answers);
-  console.log('Question 7: Incorrect');
+
+function finalResponse(){
+  if(currentScore === 7) {
+    alert('Amazing, ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
+  }
+  else if (currentScore > 5) {
+    alert('Well done ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
+  }
+  else if (currentScore > 3) {
+    alert('Hmm, ' + username + ' You got ' + currentScore + ' out of ' + scorePossible + ' answers right.');
+  }
+  else if (currentScore >= 0) {
+    alert('Wow ' + username + '. You got ' + currentScore + ' out of ' + scorePossible + ' answers right. Maybe you should try talking to me first...');
+  }
 }
 
-if(currentScore === 7) {
-  alert('Amazing, ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
-}
-else if (currentScore > 5) {
-  alert('Well done ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
-}
-else if (currentScore > 3) {
-  alert('Hmm, ' + username + ' You got ' + currentScore + ' out of ' + scorePossible + ' answers right.');
-}
-else if (currentScore === 0) {
-  alert('Wow' + username + '. You got ' + currentScore + ' out of ' + scorePossible + ' answers right. Maybe you should try talking to me first...');
-}*/
-
-//question1();
-//question2();
-//question3();
-//question4();
-//question5();
-//question6();
+question1();
+question2();
+question3();
+question4();
+question5();
+question6();
 question7();
+finalResponse();
