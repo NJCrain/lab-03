@@ -81,29 +81,35 @@ function question5() {
 
 /* increment scorePossible before the question to avoid multiple increments within the loop. The loop will ask how many step-siblings
 I have, giving the user 4 attempts to guess the right number */
-/*scorePossible++;
-for (var i = 0; i < 4; i++) {
-  var questionSix = prompt('How many step-siblings do I have? You have used ' + i + ' out of 4 guesses');
-  if(questionSix < 8) {
-    alert('Too Low, try again!');
+function question6(){
+  scorePossible++;
+  var guesses = 1;
+  while (guesses <= 4) {
+    var questionSix = prompt('How many step-siblings do I have? You have used ' + (guesses - 1) + ' out of 4 guesses');
+    if(questionSix < 8) {
+      alert('Too Low, try again!');
+      guesses++;
+    }
+    else if (questionSix > 8) {
+      alert('Too high, try again!');
+      guesses++;
+    }
+    else if (questionSix === '8') {
+      currentScore++;
+      alert('Correct, I have 8 step siblings!');
+      console.log('Question 6: Correct in '+ (guesses) + ' tries');
+      break;
+    }
+    else {
+      alert('Sorry, I couldn\'t understand your answer. Please try again');
+    }
   }
-  else if (questionSix > 8) {
-    alert('Too high, try again!');
+  if(guesses === 5) {
+    console.log('Question 6: Incorrect');
   }
-  else if (questionSix === '8') {
-    currentScore++;
-    alert('Correct, I have 8 step siblings!');
-    console.log('Question 6: Correct in '+ (i+1) + ' tries');
-    break;
-  }
-  else {
-    alert('Sorry, I couldn\'t understand your answer. Please try again');
-  }
+
+  alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
 }
-if(i === 4) {
-  console.log('Question 6: Incorrect');
-}
-alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');*/
 
 /* Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
 /*var attempts = 0;
@@ -155,6 +161,6 @@ else if (currentScore === 0) {
 //question2();
 //question3();
 //question4();
-question5();
-question6();
+//question5();
+//question6();
 question7();
