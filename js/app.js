@@ -48,31 +48,36 @@ function question3() {
     console.log('Question 3: Incorrect');
   }
 }
-/*var questionFour = prompt('Do I love dogs?');
-if(questionFour.toUpperCase() === 'YES' || questionFour.toUpperCase() === 'Y'){
-  currentScore++;
-  scorePossible++;
-  alert('Correct! Who doesn\'t? You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 4: Correct');
-}
-else {
-  scorePossible++;
-  alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 4: Incorrect');
+
+function question4() {
+  var questionFour = prompt('Do I love dogs?');
+  if(questionFour.toUpperCase() === 'YES' || questionFour.toUpperCase() === 'Y'){
+    currentScore++;
+    scorePossible++;
+    alert('Correct! Who doesn\'t? You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 4: Correct');
+  }
+  else {
+    scorePossible++;
+    alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 4: Incorrect');
+  }
 }
 
-var questionFive = prompt('Am I the oldest brother in my family?');
-if(questionFive.toUpperCase() === 'NO' || questionFive.toUpperCase() === 'N'){
-  currentScore++;
-  scorePossible++;
-  alert('Correct! I am the middle of 3. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 5: Correct');
+function question5() {
+  var questionFive = prompt('Am I the oldest brother in my family?');
+  if(questionFive.toUpperCase() === 'NO' || questionFive.toUpperCase() === 'N'){
+    currentScore++;
+    scorePossible++;
+    alert('Correct! I am the middle of 3. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 5: Correct');
+  }
+  else {
+    scorePossible++;
+    alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 5: Incorrect');
+  }
 }
-else {
-  scorePossible++;
-  alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 5: Incorrect');
-}*/
 
 /* increment scorePossible before the question to avoid multiple increments within the loop. The loop will ask how many step-siblings
 I have, giving the user 4 attempts to guess the right number */
@@ -148,4 +153,8 @@ else if (currentScore === 0) {
 
 //question1();
 //question2();
-question3();
+//question3();
+//question4();
+question5();
+question6();
+question7();
