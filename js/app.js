@@ -2,48 +2,53 @@
 
 var currentScore = 0;
 var scorePossible = 0;
-var username = prompt('Hello there! What is your name?');
+//var username = prompt('Hello there! What is your name?');
 
-var questionOne = prompt('Am I over 6\'2"?');
-if(questionOne.toUpperCase() === 'YES' || questionOne.toUpperCase() === 'Y'){
-  currentScore++;
-  scorePossible++;
-  alert('Correct! 6\'5" to be exact. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 1: Correct');
-}
-else {
-  scorePossible++;
-  alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 1: Incorrect');
-}
-
-var questionTwo = prompt('Do I play video games?');
-if(questionTwo.toUpperCase() === 'YES' || questionTwo.toUpperCase() === 'Y'){
-  currentScore++;
-  scorePossible++;
-  alert('Correct! I own more than I know what to do with. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 2: Correct');
-}
-else {
-  scorePossible++;
-  alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 2: Incorrect');
+function question1() {
+  var questionOne = prompt('Am I over 6\'2"?');
+  if(questionOne.toUpperCase() === 'YES' || questionOne.toUpperCase() === 'Y'){
+    currentScore++;
+    scorePossible++;
+    alert('Correct! 6\'5" to be exact. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 1: Correct');
+  }
+  else {
+    scorePossible++;
+    alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 1: Incorrect');
+  }
 }
 
-var questionThree = prompt('Am I over the age of 25?');
-if(questionThree.toUpperCase() === 'NO' || questionThree.toUpperCase() === 'N'){
-  currentScore++;
-  scorePossible++;
-  alert('Correct! I am but only 21 years of age. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 3: Correct');
-}
-else {
-  scorePossible++;
-  alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-  console.log('Question 3: Incorrect');
+function question2 () {
+  var questionTwo = prompt('Do I play video games?');
+  if(questionTwo.toUpperCase() === 'YES' || questionTwo.toUpperCase() === 'Y'){
+    currentScore++;
+    scorePossible++;
+    alert('Correct! I own more than I know what to do with. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 2: Correct');
+  }
+  else {
+    scorePossible++;
+    alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 2: Incorrect');
+  }
 }
 
-var questionFour = prompt('Do I love dogs?');
+function question3() {
+  var questionThree = prompt('Am I over the age of 25?');
+  if(questionThree.toUpperCase() === 'NO' || questionThree.toUpperCase() === 'N'){
+    currentScore++;
+    scorePossible++;
+    alert('Correct! I am but only 21 years of age. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 3: Correct');
+  }
+  else {
+    scorePossible++;
+    alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+    console.log('Question 3: Incorrect');
+  }
+}
+/*var questionFour = prompt('Do I love dogs?');
 if(questionFour.toUpperCase() === 'YES' || questionFour.toUpperCase() === 'Y'){
   currentScore++;
   scorePossible++;
@@ -67,11 +72,11 @@ else {
   scorePossible++;
   alert('Incorrect! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 5: Incorrect');
-}
+}*/
 
 /* increment scorePossible before the question to avoid multiple increments within the loop. The loop will ask how many step-siblings
 I have, giving the user 4 attempts to guess the right number */
-scorePossible++;
+/*scorePossible++;
 for (var i = 0; i < 4; i++) {
   var questionSix = prompt('How many step-siblings do I have? You have used ' + i + ' out of 4 guesses');
   if(questionSix < 8) {
@@ -93,10 +98,10 @@ for (var i = 0; i < 4; i++) {
 if(i === 4) {
   console.log('Question 6: Incorrect');
 }
-alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');*/
 
 /* Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
-var attempts = 0;
+/*var attempts = 0;
 var statesVisited = ['Washington', 'Oregon', 'Florida', 'Texas', 'Oklahoma', 'California', 'Idaho', 'Montana', 'Alabama', 'Lousiana'];
 var statesAbbreviated = ['WA', 'OR', 'FL', 'TX', 'OK', 'CA', 'ID', 'MT', 'AL', 'LA'];
 var answers = '';
@@ -139,4 +144,8 @@ else if (currentScore > 3) {
 }
 else if (currentScore === 0) {
   alert('Wow' + username + '. You got ' + currentScore + ' out of ' + scorePossible + ' answers right. Maybe you should try talking to me first...');
-}
+}*/
+
+//question1();
+//question2();
+question3();
