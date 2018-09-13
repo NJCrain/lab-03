@@ -2,12 +2,13 @@
 
 var currentScore = 0;
 var scorePossible = 0;
+var username = prompt('Hello there! What is your name?');
 
 var questionOne = prompt('Am I over 6\'2"?');
 if(questionOne.toUpperCase() === 'YES' || questionOne.toUpperCase() === 'Y'){
   currentScore++;
   scorePossible++;
-  alert('Correct! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+  alert('Correct! 6\'5" to be exact. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 1: Correct');
 }
 else {
@@ -20,7 +21,7 @@ var questionTwo = prompt('Do I play video games?');
 if(questionTwo.toUpperCase() === 'YES' || questionTwo.toUpperCase() === 'Y'){
   currentScore++;
   scorePossible++;
-  alert('Correct! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+  alert('Correct! I own more than I know what to do with. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 2: Correct');
 }
 else {
@@ -33,7 +34,7 @@ var questionThree = prompt('Am I over the age of 25?');
 if(questionThree.toUpperCase() === 'NO' || questionThree.toUpperCase() === 'N'){
   currentScore++;
   scorePossible++;
-  alert('Correct! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+  alert('Correct! I am but only 21 years of age. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 3: Correct');
 }
 else {
@@ -46,7 +47,7 @@ var questionFour = prompt('Do I love dogs?');
 if(questionFour.toUpperCase() === 'YES' || questionFour.toUpperCase() === 'Y'){
   currentScore++;
   scorePossible++;
-  alert('Correct! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+  alert('Correct! Who doesn\'t? You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 4: Correct');
 }
 else {
@@ -59,7 +60,7 @@ var questionFive = prompt('Am I the oldest brother in my family?');
 if(questionFive.toUpperCase() === 'NO' || questionFive.toUpperCase() === 'N'){
   currentScore++;
   scorePossible++;
-  alert('Correct! You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
+  alert('Correct! I am the middle of 3. You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
   console.log('Question 5: Correct');
 }
 else {
@@ -82,14 +83,41 @@ for (var i = 0; i < 4; i++) {
   else if (questionSix === '8') {
     currentScore++;
     alert('Correct, I have 8 step siblings!');
-    console.log('Question 6: correct in '+ i + ' tries');
+    console.log('Question 6: Correct in '+ (i+1) + ' tries');
     break;
   }
   else {
     alert('Sorry, I couldn\'t understand your answer. Please try again');
   }
 }
+if(i === 4) {
+  console.log('Question 6: Incorrect');
+}
 alert('You have guessed ' + currentScore + ' out of ' + scorePossible + ' answers correctly');
-console.log('Question 6: Incorrect');
 
+/* Create a variable to track attempts while guessing through question 7. Each guess will run through all posibilities stored in the array of answers. If a guess is correct the number of attempts will be set so that upon breaking the from the for loop the while loop ends as well but still allows a console.log for the case in which the max amount of guesses have been used. */
+var attempts = 0;
+var statesVisited = ['WASHINGTON', 'WA', 'OREGON', 'OR', 'FLORIDA', 'FL', 'TEXAS', 'TX', 'OKLAHOMA', 'OK', 'CALIFORNIA', 'CA', 'IDAHO', 'ID', 'MONTANA', 'ALABAMA', 'AL', 'LOUISIANA', 'LA'];
+scorePossible++;
+while(attempts < 6) {
+  var questionSeven = prompt('Guess a state I have visited before. You have used ' + attempts + ' of 6 guesses');
 
+  for(i = 0; i < statesVisited.length; i++) {
+    if(questionSeven.toUpperCase() === statesVisited[i]) {
+      currentScore++;
+      alert('Correct! I have been to ' + statesVisited[i]);
+      console.log('Question 7: Correct in ' + (attempts + 1) + ' tries');
+      attempts = 7;
+      break;
+    }
+    else if(i === (statesVisited.length-1)) {
+      alert('Nope! I have not been there before. Try again!');
+      attempts++;
+    }
+  }
+}
+if(attempts === 6) {
+  console.log('Question 7: Incorrect');
+}
+
+alert('Well done, ' + username + '! You got ' + currentScore + ' out of ' + scorePossible + ' answers right!');
